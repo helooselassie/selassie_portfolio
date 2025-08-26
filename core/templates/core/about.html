@@ -1,0 +1,192 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}About — Selassie Heloo{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row align-items-center">
+    
+    <!-- Profile Image -->
+    <div class="col-md-4 text-center mb-4">
+      <img src="{% static 'images/profile.jpg' %}" alt="Selassie Heloo" 
+           class="rounded-circle shadow-lg border border-4 border-accent"
+           style="width: 220px; height: 220px; object-fit: cover; transition: transform 0.3s ease;"
+           onmouseover="this.style.transform='scale(1.05)'" 
+           onmouseout="this.style.transform='scale(1)'">
+    </div>
+
+    <!-- About Text -->
+    <div class="col-md-8 text-white">
+      <h1 class="fw-bold text-accent">About Me</h1>
+      <p class="lead">Systems Engineer & <span class="text-info">E-Security Advocate</span> in Ghana.</p>
+      <p>
+        Passionate about <b>frontend</b>, <b>backend</b>, <b>cybersecurity</b>, and <b>automation</b>.  
+        I bring a discovery-first approach, ensuring every solution is tailored to unique client needs.
+      </p>
+      <blockquote class="blockquote fst-italic border-start border-accent ps-3">
+        “Discovery-first approach—solutions tailored to client needs.”
+      </blockquote>
+      <p class="mt-3">✨ Fun fact: I enjoy <b>graphic design</b> and exploring <b>electronic security innovations</b>.</p>
+    </div>
+  </div>
+
+  <!-- Core Sections -->
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <div class="card bg-dark text-light shadow-lg rounded-3 h-100">
+        <div class="card-body">
+          <h3 class="text-accent"><i class="bi bi-gear-fill"></i> Core Strengths</h3>
+          <ul class="mt-3">
+            <li>Systems Engineering & Cloud Infrastructure</li>
+            <li>Cybersecurity & Ethical Hacking</li>
+            <li>Fullstack Development (Django, APIs)</li>
+            <li>Creative Problem Solving</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mt-4 mt-md-0">
+      <div class="card bg-dark text-light shadow-lg rounded-3 h-100">
+        <div class="card-body">
+          <h3 class="text-accent"><i class="bi bi-lightbulb"></i> Philosophy</h3>
+          <p class="mt-3">
+            I believe in <span class="fw-bold text-info">technology with purpose</span> — every system, 
+            app, or design should create measurable value and empower people to achieve more securely 
+            and efficiently.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<section class="py-5">
+  <div class="container">
+    <h2 class="display-5 fw-bold text-center mb-5">
+      <i class="bi bi-bar-chart-line-fill me-3 text-primary"></i>Skills Overview
+    </h2>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="bg-dark p-4 rounded-4 shadow-lg h-100">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-shield-lock-fill text-success fs-3 me-3"></i>
+            <h5 class="mb-0 text-white">Cybersecurity</h5>
+          </div>
+          <p class="text-secondary small">Network security, penetration testing, threat analysis.</p>
+          <div class="progress" style="height: 25px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+              <span class="fw-bold">90%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="bg-dark p-4 rounded-4 shadow-lg h-100">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-code-slash text-info fs-3 me-3"></i>
+            <h5 class="mb-0 text-white">Backend (Django, APIs)</h5>
+          </div>
+          <p class="text-secondary small">RESTful API development, database management, server-side logic.</p>
+          <div class="progress" style="height: 25px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+              <span class="fw-bold">85%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="bg-dark p-4 rounded-4 shadow-lg h-100">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-palette-fill text-primary fs-3 me-3"></i>
+            <h5 class="mb-0 text-white">Frontend (React, Bootstrap)</h5>
+          </div>
+          <p class="text-secondary small">Responsive design, UI/UX, single-page applications.</p>
+          <div class="progress" style="height: 25px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <span class="fw-bold">75%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="py-5">
+  <div class="container">
+    <h2 class="display-5 fw-bold text-center mb-5">
+      <i class="bi bi-clock-history me-3 text-primary"></i>Career Timeline
+    </h2>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <ul class="timeline-list list-unstyled position-relative">
+          <li class="timeline-item mb-5">
+            <div class="timeline-point bg-primary rounded-circle shadow-sm"></div>
+            <div class="timeline-content ps-4">
+              <span class="text-white-50 fw-bold d-block mb-1">2025 — Present</span>
+              <h5 class="mb-1 text-white">Systems Engineer</h5>
+              <p class="text-white-75 mb-0">at <b class="text-primary">SelData Solutions</b></p>
+            </div>
+          </li>
+          
+          <li class="timeline-item mb-5">
+            <div class="timeline-point bg-primary rounded-circle shadow-sm"></div>
+            <div class="timeline-content ps-4">
+              <span class="text-white-50 fw-bold d-block mb-1">2023 — 2024</span>
+              <h5 class="mb-1 text-white">Cybersecurity Consultant</h5>
+              <p class="text-white-75 mb-0">Helping SMEs secure digital infrastructures.</p>
+            </div>
+          </li>
+          
+          <li class="timeline-item mb-5">
+            <div class="timeline-point bg-primary rounded-circle shadow-sm"></div>
+            <div class="timeline-content ps-4">
+              <span class="text-white-50 fw-bold d-block mb-1">2020 — 2022</span>
+              <h5 class="mb-1 text-white">Freelance Fullstack Developer</h5>
+              <p class="text-white-75 mb-0">Django + React</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline-list {
+    border-left: 2px solid var(--bs-primary);
+    padding-left: 1.5rem;
+  }
+  .timeline-item {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  .timeline-point {
+    position: absolute;
+    left: -0.75rem;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--bs-primary);
+  }
+</style>
+
+  <!-- Social Links -->
+  <div class="text-center mt-5">
+    <h4 class="text-accent">Connect with Me</h4>
+    <a href="https://github.com/helooselassie" target="_blank" class="btn btn-outline-light m-2">
+      <i class="bi bi-github"></i> GitHub
+    </a>
+    <a href="https://linkedin.com/in/selassieheloo" target="_blank" class="btn btn-outline-light m-2">
+      <i class="bi bi-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://x.com/selassieheloo" target="_blank" class="btn btn-outline-light m-2">
+      <i class="bi bi-twitter-x"></i> X
+    </a>
+  </div>
+</div>
+{% endblock %}

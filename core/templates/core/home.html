@@ -1,0 +1,449 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}Home — Selassie Kwabla Heloo{% endblock %}
+
+{% block content %}
+  <!-- Hero Slider Section -->
+  <section class="hero-slider">
+    <div class="slide active" style="background-image: url('{% static 'images/slide1.png' %}');">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>Selassie Kwabla Heloo</h1>
+        <p>Systems Engineer & E-Security Advocate at SelData Solutions</p>
+        <div class="buttons">
+          <a href="/projects/" class="btn"><i class="bx bx-folder"></i> View Projects</a>
+          <a href="/contact/" class="btn btn-outline"><i class="bx bx-envelope"></i> Contact Me</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image: url('{% static 'images/slide2.png' %}');">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>Cybersecurity & Automation</h1>
+        <p>Helping businesses stay secure & efficient through modern systems.</p>
+        <div class="buttons">
+          <a href="/about/" class="btn"><i class="bx bx-user"></i> Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" style="background-image: url('{% static 'images/slide3.png' %}');">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>Building Modern Solutions</h1>
+        <p>From APIs to Infrastructure — tailored solutions for clients worldwide.</p>
+        <div class="buttons">
+          <a href="/skills/" class="btn"><i class="bx bx-code"></i> My Skills</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="navigation">
+      <div class="prev"><i class="bx bx-chevron-left"></i></div>
+      <div class="next"><i class="bx bx-chevron-right"></i></div>
+    </div>
+
+    <!-- Dots -->
+    <div class="dots"></div>
+  </section>
+
+{% comment %} <!-- Hero Section -->
+<section class="text-center py-5 bg-dark rounded shadow-lg position-relative overflow-hidden">
+  <!-- Floating background effect -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" 
+       style="background: radial-gradient(circle at top left, rgba(29,78,216,0.2), transparent 70%);">
+  </div>
+
+  <!-- Profile Image -->
+  <img src="{% static 'images/profile.jpg' %}" 
+       alt="Selassie Kwabla Heloo" 
+       class="rounded-circle shadow mb-4 animate__animated animate__fadeInDown"
+       style="width:160px; height:160px; object-fit:cover; border:4px solid #1d4ed8;">
+
+<!-- Hero Text -->
+<h1 class="fw-bold display-5 animate__animated animate__fadeInUp">
+  Selassie Kwabla Heloo
+</h1>
+<p class="lead text-info animate__animated animate__fadeInUp animate__delay-1s">
+  Leading Systems Engineer & <span class="text-success">E-Security Advocate</span><br>
+  at SelData Solutions
+</p>
+
+<!-- CTA Buttons --> 
+<div class="text-center mt-4">
+  <a href="{% url 'projects' %}" class="btn btn-primary btn-lg m-2 shadow pulse-hover">
+    <i class="bi bi-folder2-open"></i> View Projects
+  </a>
+  <a href="{% url 'contact' %}" class="btn btn-success btn-lg m-2 shadow pulse-hover">
+    <i class="bi bi-envelope-fill"></i> Contact Me
+  </a>
+  <a href="{% url 'about' %}" class="btn btn-outline-light btn-lg m-2 shadow pulse-hover">
+    <i class="bi bi-person-lines-fill"></i> Learn More
+  </a>
+</div>
+
+</section> {% endcomment %}
+
+<!-- Divider -->
+<hr class="my-5 text-secondary opacity-50">
+
+<!-- Quick Intro Section -->
+<section class="container mt-5">
+  <div class="row align-items-center">
+    <!-- Image Side -->
+    <div class="col-md-6 mb-4">
+      <img src="{% static 'images/workspace.jpg' %}" 
+           alt="Workspace" 
+           class="img-fluid rounded shadow-lg">
+    </div>
+
+    <!-- Text Side -->
+    <div class="col-md-6 text-light">
+      <h2 class="text-info"><i class="bi bi-lightning-charge-fill"></i> About Me</h2>
+      <p>
+        I’m a <strong>Systems Engineer</strong> & 
+        <strong>Cybersecurity Advocate</strong> with a passion for 
+        <span class="text-accent">frontend, backend, automation, and electronic security</span>.
+        My focus is on creating secure, scalable, and user-friendly solutions.  
+      </p>
+
+      <!-- Quote -->
+      <blockquote class="blockquote border-start border-success ps-3 my-3">
+        <i class="bi bi-quote text-success"></i> 
+        “Discovery-first approach — solutions tailored to client needs.”
+      </blockquote>
+
+      <!-- Highlights -->
+      <ul class="list-unstyled mt-3">
+        <li><i class="bi bi-check-circle text-success"></i> Full-stack development (Python, Django, JS)</li>
+        <li><i class="bi bi-check-circle text-success"></i> Cloud & infrastructure automation (AWS, Docker)</li>
+        <li><i class="bi bi-check-circle text-success"></i> Electronic security systems & integration</li>
+        <li><i class="bi bi-check-circle text-success"></i> Graphic design & branding support</li>
+      </ul>
+
+      <!-- Achievements Badges -->
+      <div class="mt-3">
+        <span class="badge bg-primary me-2"><i class="bi bi-award"></i> Certified Engineer</span>
+        <span class="badge bg-success me-2"><i class="bi bi-shield-lock-fill"></i> Cybersecurity Advocate</span>
+        <span class="badge bg-info text-dark"><i class="bi bi-rocket-takeoff"></i> Startup Mentor</span>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="mt-4">
+        <a href="{% url 'about' %}" class="btn btn-success shadow pulse-hover me-2">
+          <i class="bi bi-person-lines-fill"></i> Learn More
+        </a>
+        <a href="{% static 'files/selassie_cv.pdf' %}" target="_blank" 
+           class="btn btn-outline-light shadow pulse-hover">
+          <i class="bi bi-file-earmark-arrow-down"></i> Download CV
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<hr class="my-5 text-secondary opacity-50">
+
+<!-- Featured Projects Preview -->
+<section class="container mt-5">
+  <h2 class="text-info text-center mb-4"><i class="bi bi-folder2-open"></i> Featured Projects</h2>
+  <div class="row g-4">
+    {% for p in projects|slice:":3" %}
+    <div class="col-md-4">
+      <div class="card bg-dark text-light shadow-lg h-100 border border-secondary project-card hover-glow">
+        <div class="card-body">
+          <h5 class="card-title text-accent"><i class="bi bi-terminal"></i> {{ p.name }}</h5>
+          <p class="card-text">{{ p.description|truncatewords:20 }}</p>
+          <p class="small text-muted"><i class="bi bi-tools"></i> {{ p.technologies }}</p>
+          {% if p.github_url %}
+            <a href="{{ p.github_url }}" target="_blank" class="btn btn-outline-light btn-sm mt-2 pulse-hover">
+              <i class="bi bi-github"></i> View Code
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% empty %}
+      <p class="text-center text-muted">No projects added yet.</p>
+    {% endfor %}
+  </div>
+  <div class="text-center mt-4">
+    <a href="{% url 'projects' %}" class="btn btn-primary shadow pulse-hover">
+      <i class="bi bi-collection"></i> See All Projects
+    </a>
+  </div>
+</section>
+
+<!-- Divider -->
+<hr class="my-5 text-secondary opacity-50">
+
+<!-- Stats Section -->
+<section class="container text-center text-light mt-5">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card bg-dark shadow h-100 p-4 border-0 hover-glow">
+        <h3 class="text-accent"><i class="bi bi-clock-history"></i> 5+</h3>
+        <p>Years of Experience</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card bg-dark shadow h-100 p-4 border-0 hover-glow">
+        <h3 class="text-accent"><i class="bi bi-code-slash"></i> 20+</h3>
+        <p>Projects Delivered</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card bg-dark shadow h-100 p-4 border-0 hover-glow">
+        <h3 class="text-accent"><i class="bi bi-people-fill"></i> 15+</h3>
+        <p>Happy Clients</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Divider -->
+<hr class="my-5 text-secondary opacity-50">
+
+<!-- Tech Stack / Skills Icons -->
+<section class="container mt-5 text-center">
+  <h2 class="text-info mb-4"><i class="bi bi-cpu"></i> Tech Stack</h2>
+  <div class="d-flex justify-content-center gap-4 flex-wrap fs-1 text-light">
+    <i class="bi bi-filetype-py" title="Python"></i>
+    <i class="bi bi-filetype-js" title="JavaScript"></i>
+    <i class="bi bi-bootstrap-fill" title="Bootstrap"></i>
+    <i class="bi bi-git" title="Git/GitHub"></i>
+    <i class="bi bi-cloud-fill" title="Cloud & Infra"></i>
+    <i class="bi bi-shield-lock-fill" title="Cybersecurity"></i>
+  </div>
+</section>
+<style>
+/* Smooth pulse effect for all CTA buttons */
+.btn {
+  border-radius: 0.75rem; /* rounded-xl */
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(29, 78, 216, 0.6);
+}
+
+/* Primary brand button */
+.btn-primary {
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
+  border: none;
+}
+
+/* Outline style for contrast buttons */
+.btn-outline-light {
+  border: 2px solid #fff;
+}
+
+/* Success accent buttons */
+.btn-success {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  border: none;
+}
+.pulse-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pulse-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(29, 78, 216, 0.6);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.position-absolute {
+  pointer-events: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hero-slider .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-slider .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-slider .content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px;
+}
+
+.hero-slider .content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #1d4ed8;
+}
+
+.hero-slider .content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-slider .buttons .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: #1d4ed8;
+  transition: 0.3s ease;
+}
+
+.hero-slider .buttons .btn:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+.hero-slider .buttons .btn-outline {
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.hero-slider .buttons .btn-outline:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Navigation */
+.navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.navigation div {
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+  margin: 0 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.navigation i {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+}
+
+.dots span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dots span.active {
+  background: #1d4ed8;
+}
+
+</style>
+<script>
+const slides = document.querySelectorAll('.hero-slider .slide');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const dotsContainer = document.querySelector('.dots');
+let index = 0;
+
+// Create dots
+slides.forEach((_, i) => {
+  const dot = document.createElement('span');
+  if (i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => showSlide(i));
+  dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.dots span');
+
+function showSlide(i) {
+  slides.forEach((slide, idx) => {
+    slide.classList.remove('active');
+    dots[idx].classList.remove('active');
+  });
+  slides[i].classList.add('active');
+  dots[i].classList.add('active');
+  index = i;
+}
+
+function nextSlide() {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}
+
+function prevSlide() {
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+}
+
+nextBtn.addEventListener('click', nextSlide);
+prevBtn.addEventListener('click', prevSlide);
+
+// Auto-slide every 6s
+setInterval(nextSlide, 6000);
+
+</script> 
+{% endblock %}
