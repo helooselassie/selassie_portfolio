@@ -4,11 +4,13 @@ class Project(models.Model):
     name = models.CharField(max_length=200)
     description = models.TextField()
     technologies = models.CharField(max_length=200, blank=True)
-    github_url = models.URLField(blank=True)
+    github_url = models.URLField(blank=True, null=True)
+    live_url = models.URLField(blank=True, null=True)
+    image = models.ImageField(upload_to='projects/', blank=True, null=True)
 
     def __str__(self):
         return self.name
-
+    
 
 class Experience(models.Model):
     role = models.CharField(max_length=200)

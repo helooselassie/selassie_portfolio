@@ -3,6 +3,8 @@ from .models import Project, Experience
 from .forms import ContactForm   # ✅ import the form
 import requests
 from django.core.mail import send_mail
+import json
+from core.models import Experience
 
 
 def home(request):
@@ -33,7 +35,7 @@ def projects(request):
     # Fetch projects from DB
     db_projects = Project.objects.all()
 
-    # Fetch repos from GitHub API (optional live data)
+    # Fetch repos from GitHub API
     url = "https://api.github.com/users/helooselassie/repos"
     response = requests.get(url)
     github_projects = []
@@ -42,7 +44,7 @@ def projects(request):
         for repo in data:
             github_projects.append({
                 "name": repo["name"],
-                "desc": repo["description"],
+                "description": repo.get("description", "No description"),
                 "url": repo["html_url"]
             })
 
@@ -73,5 +75,5 @@ def contact(request):
 
 
 def experience(request):
-    exp_list = Experience.objects.all()
+    exp_list = Experience.objects.all().order_by("-start_year")
     return render(request, "core/experience.html", {"exp_list": exp_list})

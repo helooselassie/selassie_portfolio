@@ -1,31 +1,92 @@
 {% extends "core/base.html" %}
+{% load static %}
 {% block title %}Projects — Selassie Kwabla Heloo{% endblock %}
 
 {% block content %}
 <section class="py-5">
   <div class="container">
-<h1 class="mb-5 display-4 fw-bold text-center">
-  <i class="bi bi-folder2-open me-3"></i>My Projects
-</h1>    <div class="row g-4">
+    <h1 class="mb-5 display-4 fw-bold text-center">
+      <i class="bi bi-folder2-open me-3"></i>My Projects
+    </h1>
+
+    <!-- DB Projects -->
+    <div class="row g-4 mb-5">
       {% for p in db_projects %}
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card bg-dark text-white h-100 border-0 rounded-4 shadow-lg project-card">
+              {% if p.image %}
+                <img src="{{ p.image.url }}" class="card-img-top rounded-top-4" alt="{{ p.name }}">
+              {% else %}
+                <img src="{% static 'images/default_project.png' %}" class="card-img-top rounded-top-4" alt="{{ p.name }}">
+              {% endif %}
             <div class="card-body d-flex flex-column">
               <h5 class="card-title text-primary fw-bold mb-3">{{ p.name }}</h5>
               <p class="card-text text-light flex-grow-1">{{ p.description }}</p>
-              <p class="card-text mt-auto"><small class="text-secondary">Tech Stack: {{ p.technologies }}</small></p>
-              {% if p.github_url %}
-                <div class="mt-3">
+              <p class="card-text mt-auto">
+                <small class="text-secondary">⚙ Tech Stack: {{ p.technologies }}</small>
+              </p>
+              <div class="mt-3 d-flex gap-2">
+                {% if p.github_url %}
                   <a href="{{ p.github_url }}" class="btn btn-outline-primary btn-sm rounded-pill" target="_blank">
-                    <i class="bi bi-github me-1"></i> View on GitHub
+                    <i class="bi bi-github me-1"></i> Code
                   </a>
-                </div>
-              {% endif %}
+                {% endif %}
+                {% if p.live_url %}
+                  <a href="{{ p.live_url }}" class="btn btn-success btn-sm rounded-pill" target="_blank">
+                    <i class="bi bi-box-arrow-up-right me-1"></i> Live
+                  </a>
+                {% endif %}
+              </div>
             </div>
           </div>
         </div>
+      {% empty %}
+        <p class="text-center text-muted">No projects added yet.</p>
       {% endfor %}
     </div>
+      </div>
+</section>
+
+<!-- GitHub Projects -->
+<hr class="my-5 text-secondary opacity-50">
+<section class="container mt-5">
+  <h2 class="text-info text-center mb-4">
+    <i class="bi bi-github me-2"></i> GitHub Repositories
+  </h2>
+  <div class="row g-4">
+    {% for g in github_projects %}
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card bg-dark text-light h-100 border border-secondary rounded-4 shadow-lg project-card hover-glow">
+          <div class="card-body d-flex flex-column">
+            <!-- Repo Name -->
+            <h5 class="card-title fw-bold text-primary mb-3">
+              <i class="bi bi-code-slash me-2"></i>{{ g.name }}
+            </h5>
+
+            <!-- Repo Description -->
+            <p class="card-text flex-grow-1 text-muted">
+              {% if g.description %}{{ g.description }}{% else %}<em>No description provided.</em>{% endif %}
+            </p>
+
+            <!-- Badges -->
+            <div class="mb-3">
+              <span class="badge bg-secondary me-1"><i class="bi bi-git"></i> GitHub</span>
+              <span class="badge bg-info text-dark"><i class="bi bi-code"></i> Open Source</span>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="{{ g.url }}" class="btn btn-outline-light btn-sm rounded-pill mt-auto pulse-hover" target="_blank">
+              <i class="bi bi-box-arrow-up-right"></i> View Repo
+            </a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-center text-muted">No GitHub repositories found.</p>
+    {% endfor %}
   </div>
 </section>
+
+
+
 {% endblock %}
