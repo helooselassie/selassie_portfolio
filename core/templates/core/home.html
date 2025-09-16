@@ -155,6 +155,11 @@
     <div class="col-md-4">
       <div class="card bg-dark text-light shadow-lg h-100 border border-secondary project-card hover-glow">
         <div class="card-body">
+          {% if p.image %}
+                <img src="{{ p.image.url }}" class="card-img-top rounded-top-4" alt="{{ p.name }}">
+              {% else %}
+                <img src="{% static 'images/default_project.png' %}" class="card-img-top rounded-top-4" alt="{{ p.name }}">
+              {% endif %}
           <h5 class="card-title text-accent"><i class="bi bi-terminal"></i> {{ p.name }}</h5>
           <p class="card-text">{{ p.description|truncatewords:20 }}</p>
           <p class="small text-muted"><i class="bi bi-tools"></i> {{ p.technologies }}</p>
@@ -185,19 +190,19 @@
   <div class="row g-4">
     <div class="col-md-4">
       <div class="card bg-dark shadow h-100 p-4 border-0 hover-glow">
-        <h3 class="text-accent"><i class="bi bi-clock-history"></i> 5+</h3>
+        <h3 class="text-accent"><i class="bi bi-clock-history"></i> 15+</h3>
         <p>Years of Experience</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card bg-dark shadow h-100 p-4 border-0 hover-glow">
-        <h3 class="text-accent"><i class="bi bi-code-slash"></i> 20+</h3>
+        <h3 class="text-accent"><i class="bi bi-code-slash"></i> 75+</h3>
         <p>Projects Delivered</p>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card bg-dark shadow h-100 p-4 border-0 hover-glow">
-        <h3 class="text-accent"><i class="bi bi-people-fill"></i> 15+</h3>
+        <h3 class="text-accent"><i class="bi bi-people-fill"></i> 100+</h3>
         <p>Happy Clients</p>
       </div>
     </div>
