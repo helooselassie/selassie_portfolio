@@ -54,8 +54,12 @@ def projects(request):
     })
 
 
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from .forms import ContactForm
+from django.core.mail import send_mail
+
 def contact(request):
-    sent = False
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -66,11 +70,14 @@ def contact(request):
             # send email
             subject = f"Portfolio Contact from {name}"
             body = f"Message from {name} <{email}>:\n\n{message}"
-            send_mail(subject, body, email, ["your_email@gmail.com"])  # recipient
+            send_mail(subject, body, email, ["your_email@gmail.com"])  # replace with your recipient
 
-            sent = True
+            # Redirect with a success flag in the URL
+            return redirect(reverse("contact") + "?sent=1")
     else:
         form = ContactForm()
+
+    sent = request.GET.get("sent") == "1"
     return render(request, "core/contact.html", {"form": form, "sent": sent})
 
 
